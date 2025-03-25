@@ -1,0 +1,291 @@
+ /* ---------------------- RESET BÁSICO ---------------------- */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* ---------------------- ESTILOS GERAIS ---------------------- */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* ---------------------- HEADER FIXO ---------------------- */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  /* ---------------------- SIDEBAR FIXA ---------------------- */
+  nav.sidebar {
+    background-color: #f4f4f4;
+    width: 220px;
+    position: fixed;
+    top: 80px; 
+    left: 0;
+    height: calc(100% - 80px); 
+    overflow-y: auto; 
+    padding: 20px;
+    border-right: 1px solid #ddd;
+  }
+  nav.sidebar h3 {
+    margin-bottom: 10px;
+  }
+  nav.sidebar ul {
+    list-style-type: none;
+  }
+  nav.sidebar ul li {
+    margin: 15px 0;
+  }
+  nav.sidebar ul li a {
+    color: #333;
+  }
+
+  /* ---------------------- MAIN (CONTEÚDO) ---------------------- */
+  main {
+    margin: 100px 20px 40px 260px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    min-height: 60vh;
+  }
+  main h2 {
+    margin-bottom: 10px;
+  }
+
+  .frase-acima {
+    margin-bottom: 10px; 
+}
+
+  .chat-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    display: inline-block;
+    
+  }
+
+  .why-choose-us {
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    padding: 30px 20px;
+    margin-top: 40px; 
+  }
+  .why-choose-us h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .why-choose-us p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .benefit-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    transition: box-shadow 0.2s ease;
+  }
+  .benefit-card:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  .benefit-card h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  .benefit-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .assistente-section {
+    background: linear-gradient(135deg, #333 0%, #111 100%);
+    color: #fff;
+    padding: 50px 0; 
+    text-align: center;
+  }
+
+  .assistente-content {
+    margin: 0 20px 0 260px;
+  }
+
+  .assistente-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+  .assistente-content p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto 20px auto;
+  }
+  .service-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.2s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+  }
+  .service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  .service-card p {
+    color: #f0f0f0;
+    font-size: 1rem;
+  }
+
+  /* ---------------------- FOOTER AMPLIADO ---------------------- */
+  footer {
+    background-color: #111;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: left;
+    width: 100%;
+    clear: both;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-faq {
+    flex: 1 1 300px;
+    margin: 10px;
+  }
+  .footer-faq h3 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+  }
+  .faq-item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+    outline: none;
+  }
+  .faq-item p {
+    margin-top: 5px;
+    line-height: 1.4em;
+  }
+
+  .footer-contact {
+    flex: 1 1 300px;
+    margin: 10px;
+    text-align: center;
+  }
+  .footer-contact img {
+    max-width: 150px;
+    margin-bottom: 15px;
+  }
+  .footer-contact p {
+    margin: 10px 0;
+  }
+
+  .cta-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: #e50914;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+  .cta-button:hover {
+    background-color: #b00610;
+  }
+
+  .footer-bottom {
+    margin: 0 20px 0 260px;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #bbb;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+  }
+
+  /* ---------------------- RESPONSIVIDADE ---------------------- */
+  @media screen and (max-width: 768px) {
+    nav.sidebar {
+      position: static;
+      width: 100%;
+      height: auto;
+      border-right: none;
+    }
+    main {
+      margin: 20px;
+    }
+    .why-choose-us {
+      margin-top: 20px;
+      padding: 20px;
+    }
+    .assistente-content {
+      margin: 0 20px; 
+    }
+    .assistente-content h2 {
+      font-size: 1.8rem;
+    }
+    .assistente-content p {
+      font-size: 1rem;
+    }
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-faq, .footer-contact {
+      max-width: 500px;
+    }
+  }

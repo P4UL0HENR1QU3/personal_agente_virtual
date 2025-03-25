@@ -4,267 +4,147 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Personal Trainer</title>
-  <style>
-    /* ---------------------- RESET BÁSICO ---------------------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    /* ---------------------- ESTILOS GERAIS ---------------------- */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      color: #333;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    /* ---------------------- HEADER FIXO ---------------------- */
-    header {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      width: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-    }
-    /* ---------------------- SIDEBAR FIXA ---------------------- */
-    nav.sidebar {
-      background-color: #f4f4f4;
-      width: 220px;
-      position: fixed;
-      top: 80px;              /* Alinha abaixo do header (80px de altura) */
-      left: 0;
-      height: calc(100% - 80px); /* Ocupa o restante da tela */
-      overflow-y: auto;       /* Se o conteúdo for maior que a tela, rola */
-      padding: 20px;
-      border-right: 1px solid #ddd;
-    }
-    nav.sidebar h3 {
-      margin-bottom: 10px;
-    }
-    nav.sidebar ul {
-      list-style-type: none;
-    }
-    nav.sidebar ul li {
-      margin: 15px 0;
-    }
-    nav.sidebar ul li a {
-      color: #333;
-    }
-    /* ---------------------- MAIN (CONTEÚDO) ---------------------- */
-    main {
-      /* Espaço para não ficar embaixo do header e da sidebar */
-      margin: 100px 20px 40px 260px;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 4px;
-      min-height: 60vh; /* só para demonstrar um espaço mínimo */
-    }
-    main h2 {
-      margin-bottom: 10px;
-    }
-    /* Botão (agora um link) para o agente virtual */
-    .chat-button {
-      background-color: #28a745;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 16px;
-      border-radius: 4px;
-      margin-bottom: 20px;
-      display: inline-block;
-    }
-    /* Caixa do chat (mantida como exemplo, mas não é acionada) */
-    .chat-box {
-      display: none;
-      border: 1px solid #ccc;
-      padding: 15px;
-      margin-top: 20px;
-      border-radius: 4px;
-      background-color: #fafafa;
-    }
-    /* ---------------------- FOOTER AMPLIADO ---------------------- */
-    footer {
-      background-color: #111;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: left;
-      width: 100%;
-      clear: both;
-    }
-    /* Container principal dentro do footer */
-    .footer-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    /* Seção de perguntas frequentes (FAQ) */
-    .footer-faq {
-      flex: 1 1 300px;
-      margin: 10px;
-    }
-    .footer-faq h3 {
-      margin-bottom: 20px;
-      font-size: 1.5em;
-    }
-    .faq-item {
-      margin-bottom: 10px;
-      border-bottom: 1px solid #333;
-      padding-bottom: 10px;
-    }
-    .faq-item summary {
-      cursor: pointer;
-      font-weight: bold;
-      list-style: none;
-      outline: none;
-    }
-    .faq-item p {
-      margin-top: 5px;
-      line-height: 1.4em;
-    }
-    /* Seção de contato/logo */
-    .footer-contact {
-      flex: 1 1 300px;
-      margin: 10px;
-      text-align: center;
-    }
-    .footer-contact img {
-      max-width: 150px;
-      margin-bottom: 15px;
-    }
-    .footer-contact p {
-      margin: 10px 0;
-    }
-    /* Botão de chamada para ação */
-    .cta-button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 20px;
-      background-color: #e50914;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background 0.3s ease;
-    }
-    .cta-button:hover {
-      background-color: #b00610;
-    }
-    /* Parte inferior do rodapé (direitos reservados) */
-    .footer-bottom {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 0.9em;
-      color: #bbb;
-      border-top: 1px solid #333;
-      padding-top: 20px;
-    }
-    /* ---------------------- RESPONSIVIDADE ---------------------- */
-    @media screen and (max-width: 768px) {
-      nav.sidebar {
-        position: static;
-        width: 100%;
-        height: auto;
-        border-right: none;
-      }
-      main {
-        margin: 20px;
-      }
-      .footer-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .footer-faq, .footer-contact {
-        max-width: 500px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <!-- ====================== HEADER FIXO ====================== -->
-  <header>
-    <h1>Personal Trainer</h1>
-  </header>
-  
-  <!-- ====================== SIDEBAR FIXA ====================== -->
-  <nav class="sidebar">
-    <h3>Menu</h3>
-    <ul>
-      <li><a href="#">Início</a></li>
-      <li><a href="#">Serviços</a></li>
-      <li><a href="#">Contato</a></li>
-    </ul>
-  </nav>
-  
-  <!-- ====================== CONTEÚDO PRINCIPAL ====================== -->
-  <main>
-    <h2>Bem-vindo ao nosso site!</h2>
-    <p>Aqui você encontra os melhores serviços para transformar sua vida!</p>
+    <!-- ====================== HEADER FIXO ====================== -->
+    <header>
+      <h1>Personal Trainer</h1>
+    </header>
     
+    <!-- ====================== SIDEBAR FIXA ====================== -->
+    <nav class="sidebar">
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+    
+    <!-- ====================== CONTEÚDO PRINCIPAL ====================== -->
+    <main>
+      <h2>Bem-vindo ao nosso site!</h2>
+      <p class="frase-acima">Aqui você encontra os melhores serviços para transformar sua vida!</p>
+      
+      
+      <a href="https://t.me/IRADO_BOT" class="chat-button" target="_blank">
+        Fale com o Agente Virtual
+      </a>
   
-    <a href="https://t.me/IRADO_BOT" class="chat-button" target="_blank">
-      Fale com o Agente Virtual
-    </a>
-  </main>
+      <section class="why-choose-us">
+        <h3>Por que escolher nosso serviço?</h3>
+        <p>Contamos com uma equipe especializada para ajudar você a alcançar resultados reais, de forma prática e segura.</p>
+        
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <h4>✔️ Experiência Comprovada</h4>
+            <p>Nossa equipe conta com profissionais certificados e experiência no mercado fitness.</p>
+          </div>
+          <div class="benefit-card">
+            <h4>✔️ Planos Personalizados</h4>
+            <p>Elaboramos rotinas de treino e dieta adaptadas ao seu estilo de vida e objetivos.</p>
+          </div>
+          <div class="benefit-card">
+            <h4>✔️ Suporte Constante</h4>
+            <p>Você conta com acompanhamento próximo para ajustar e otimizar o seu progresso.</p>
+          </div>
+          <div class="benefit-card">
+            <h4>✔️ Resultados Reais</h4>
+            <p>Focamos em resultados sustentáveis, melhorando sua saúde e qualidade de vida.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  
+    <section class="assistente-section">
+
+      <div class="assistente-content">
+        <h2>Uma equipe multidisciplinar que cuida de você</h2>
+        
+        <p>💪 Olá! Seja bem-vindo(a) ao seu assistente fitness!</p>
+        <p>
+          Sou seu agente virtual e estou aqui para te ajudar a alcançar seus objetivos.
+          Me diga, como posso te ajudar hoje? 😊
+        </p>
   
 
-  <footer>
-    <div class="footer-container">
-    
-      <div class="footer-faq">
-        <h3>Perguntas Frequentes</h3>
-        <details class="faq-item">
-          <summary>Quanto tempo leva para obter resultados?</summary>
-          <p>
-            Isso varia de pessoa para pessoa, mas em geral, com treino consistente
-            e uma boa alimentação, é possível ver mudanças em 4 a 8 semanas.
-          </p>
-        </details>
-        <details class="faq-item">
-          <summary>Eu preciso seguir uma dieta muito restrita?</summary>
-          <p>
-            Não necessariamente. Nossa equipe de nutricionistas sugere estratégias
-            alimentares equilibradas, adaptadas ao seu estilo de vida.
-          </p>
-        </details>
-        <details class="faq-item">
-          <summary>A consultoria é indicada para pessoas com pouco tempo?</summary>
-          <p>
-            Sim! Ajustamos os treinos conforme a sua disponibilidade, para que
-            você possa conciliar exercícios com uma rotina agitada.
-          </p>
-        </details>
-        <details class="faq-item">
-          <summary>A consultoria online é tão eficiente quanto a presencial?</summary>
-          <p>
-            Com o acompanhamento virtual, você recebe planos de treino,
-            orientações e feedbacks constantes, garantindo resultados tão bons
-            quanto o presencial.
-          </p>
-        </details>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>🏋️ Treinamento Personalizado</h3>
+            <p>Planos de treino adaptados para você.</p>
+          </div>
+          <div class="service-card">
+            <h3>🥗 Orientação Nutricional</h3>
+            <p>Dicas para melhorar sua alimentação.</p>
+          </div>
+          <div class="service-card">
+            <h3>📅 Consultoria e Acompanhamento</h3>
+            <p>Ajudamos você a manter o foco.</p>
+          </div>
+          <div class="service-card">
+            <h3>📊 Avaliação Física</h3>
+            <p>Para acompanhar seu progresso.</p>
+          </div>
+        </div>
+  
+        <p>Qual dessas opções mais te interessa? Ou me diga o que você precisa! 💬</p>
+        <p>Está tendo dificuldade de conversar por aqui?</p>
+        <p>Email: xxxxxxxxxxxxx@gmail.com</p>
+        <p>Instagram: Personal_Trainer</p>
       </div>
-     
-      <div class="footer-contact">
-        <img src="img/logo_personal.jpg" alt="Logo Personal Trainer" />
-        <p>
-          Ficou com mais alguma dúvida? <br />
-          Entre em contato para mais informações!
-        </p>
-        <p>Siga-nos no Instagram: @Personal_Trainer</p>
-        <a href="#consultoria" class="cta-button">Quero saber mais sobre a consultoria</a>
+    </section>
+  
+    <!-- ====================== RODAPÉ COMPLETO ====================== -->
+    <footer>
+      <div class="footer-container">
+       
+        <div class="footer-faq">
+          <h3>Perguntas Frequentes</h3>
+          <details class="faq-item">
+            <summary>Quanto tempo leva para obter resultados?</summary>
+            <p>
+              Isso varia de pessoa para pessoa, mas em geral, com treino consistente
+              e uma boa alimentação, é possível ver mudanças em 4 a 8 semanas.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>Eu preciso seguir uma dieta muito restrita?</summary>
+            <p>
+              Não necessariamente. Nossa equipe de nutricionistas sugere estratégias
+              alimentares equilibradas, adaptadas ao seu estilo de vida.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>A consultoria é indicada para pessoas com pouco tempo?</summary>
+            <p>
+              Sim! Ajustamos os treinos conforme a sua disponibilidade, para que
+              você possa conciliar exercícios com uma rotina agitada.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>A consultoria online é tão eficiente quanto a presencial?</summary>
+            <p>
+              Com o acompanhamento virtual, você recebe planos de treino,
+              orientações e feedbacks constantes, garantindo resultados tão bons
+              quanto o presencial.
+            </p>
+          </details>
+        </div>
+
+        <div class="footer-contact">
+          <img src="img/logo_personal.jpg" alt="Logo Personal Trainer" />
+          <p>
+            Ficou com mais alguma dúvida? <br />
+            Entre em contato para mais informações!
+          </p>
+          <p>Siga-nos no Instagram: @Personal_Trainer</p>
+          <a href="#consultoria" class="cta-button">Quero saber mais sobre a consultoria</a>
+        </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2025 Personal Trainer. Todos os direitos reservados.
-    </div>
-  </footer>
-</body>
-</html>
+      <div class="footer-bottom">
+        &copy; 2025 Personal Trainer. Todos os direitos reservados.
+      </div>
+    </footer>
+  </body>
+  </html>
